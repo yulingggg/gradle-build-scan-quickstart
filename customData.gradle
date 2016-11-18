@@ -34,27 +34,29 @@ if (status) {
 }
 
 // Git diff
-def diff = 'git diff'.execute().text
-if (diff) {
-    def baseUrl = new URL('https://api.github.com/gists')
-    String credentials = "$gistUsername:$gistToken"
-    String basicAuth = "Basic ${credentials.bytes.encodeBase64()}"
-    try {
-        HttpURLConnection connection = (HttpURLConnection) baseUrl.openConnection()
-        connection.with {
-            setRequestProperty("Authorization", basicAuth)
-            doOutput = true
-            requestMethod = 'POST'
-            outputStream.withWriter { writer ->
-                jsonRequest(writer, gradle.rootProject, diff)
-            }
+buildScan.buildFinished {
+    def diff = 'git diff'.execute().text
+    if (diff) {
+        def baseUrl = new URL('https://api.github.com/gists')
+        String credentials = "$gistUsername:$gistToken"
+        String basicAuth = "Basic ${credentials.bytes.encodeBase64()}"
+        try {
+            HttpURLConnection connection = (HttpURLConnection) baseUrl.openConnection()
+            connection.with {
+                setRequestProperty("Authorization", basicAuth)
+                doOutput = true
+                requestMethod = 'POST'
+                outputStream.withWriter { writer ->
+                    jsonRequest(writer, gradle.rootProject, diff)
+                }
 
-            def parser = new JsonSlurper()
-            def url = parser.parse(content.text.bytes).html_url
-            buildScan.link('Git diff', url)
+                def parser = new JsonSlurper()
+                def url = parser.parse(content.text.bytes).html_url
+                buildScan.link('Git diff', url)
+            }
+        } catch (ex) {
+            gradle.rootProject.logger.warn("Unable to publish diff to Gist", ex)
         }
-    } catch (ex) {
-        gradle.rootProject.logger.warn("Unable to publish diff to Gist", ex)
     }
 }
 
