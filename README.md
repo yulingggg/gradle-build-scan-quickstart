@@ -4,7 +4,7 @@
 
 This is an example project that you can use to experience [build scans][gradle.com].
 
-It is a small Java project that has the [build scan plugin][plugin] already applied.
+It is a small Java project that has the [Gradle Build Scan Plugin][plugin] already applied.
 
 ## Create a build scan
 
@@ -36,7 +36,7 @@ Alternatively, enable one of your own builds to produce build scans by following
 
 ## Learn more
 
-Read the [build scan plugin user manual][manual] to learn more about build scans and the build scan plugin.
+Read the [Gradle Build Scan Plugin User Manual][manual] to learn more about build scans and the build scan plugin.
 
 ## Need help?
 
