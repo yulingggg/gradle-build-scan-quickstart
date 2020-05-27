@@ -1,2 +1,5 @@
-rootProject.name = 'gradle-build-scan-quickstart'
+plugins {
+    id "com.gradle.enterprise" version "3.3.2"
+}
 
+rootProject.name = 'gradle-build-scan-quickstart'
