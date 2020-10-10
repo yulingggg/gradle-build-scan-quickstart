@@ -3,3 +3,11 @@ plugins {
 }
 
 rootProject.name = 'gradle-build-scan-quickstart'
+
+gradleEnterprise {
+    buildScan {
+        publishAlways()
+        termsOfServiceUrl = "https://gradle.com/terms-of-service"
+        termsOfServiceAgree = "yes"
+    }
+}
