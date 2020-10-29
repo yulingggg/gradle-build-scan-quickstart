@@ -6,8 +6,7 @@ rootProject.name = 'gradle-build-scan-quickstart'
 
 gradleEnterprise {
     buildScan {
-        termsOfServiceUrl = 'https://gradle.com/terms-of-service'
-    	termsOfServiceAgree = 'yes'
+        server = '<<your Gradle Enterprise instance>>'
     	publishAlways()
     }
 }
