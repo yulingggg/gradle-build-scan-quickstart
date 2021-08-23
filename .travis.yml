@@ -20,3 +20,4 @@ script:
   - ./gradlew build
   - ./gradlew test
   - ./gradlew test sonarqube -Dsonar.host.url=https://sonar.josdem.io
+  
