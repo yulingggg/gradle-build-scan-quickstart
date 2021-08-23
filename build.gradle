@@ -17,6 +17,7 @@ dependencies {
     testImplementation 'junit:junit:4.13.1'
 }
 
+//systemProp.sonar.host.url=https://sonar.josdem.io/
 
 
 jacocoTestReport {
