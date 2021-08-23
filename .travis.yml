@@ -4,5 +4,15 @@ install: skip
 jdk:
 - oraclejdk8
 
+# see https://blog.travis-ci.com/2014-12-17-faster-builds-with-container-based-infrastructure
+sudo: false
+
+# cache the build tool's caches
+cache:
+  directories:
+  - $HOME/.m2
+  - $HOME/.gradle
+
+
 script:
-  - ./gradlew build --scan -s
+  - ./gradlew build
