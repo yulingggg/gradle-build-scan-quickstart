@@ -2,8 +2,5 @@ language: java
 install: skip
 
 
-
-jdk: oraclejdk8
-
 script:
   - ./gradlew build --scan -s
