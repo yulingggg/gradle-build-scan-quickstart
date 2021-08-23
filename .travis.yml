@@ -3,8 +3,11 @@ install: skip
 
 jdk:
   - oraclejdk8
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
+sudo: false
+addons:
+  apt:
+    packages:
+      - oracle-java8-installer
 
 script:
   - ./gradlew build
