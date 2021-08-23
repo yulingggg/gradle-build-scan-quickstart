@@ -19,4 +19,4 @@ addons:
 script:
   - ./gradlew build
   - ./gradlew test
-   - ./gradlew test sonarqube
+  - ./gradlew test sonarqube
