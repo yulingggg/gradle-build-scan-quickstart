@@ -4,6 +4,69 @@ plugins {
     id "org.sonarqube" version "2.7"
 }
 
+// HTML test report-code coverage and static code analysis
+apply plugin: 'checkstyle'
+apply plugin: 'findbugs'
+apply plugin: 'pmd'
+apply plugin: de.aaschmid.gradle.plugins.cpd.CpdPlugin
+
+checkstyle {
+    toolVersion = '8.12'
+    ignoreFailures = false
+    configFile = file("${rootGradleDir}/static-code-analysis/checkstyle/checkstyle.xml")
+}
+
+findbugs {
+    toolVersion = '3.0.1'
+    ignoreFailures = false
+}
+
+pmd {
+    toolVersion = '6.7.0'
+    ignoreFailures = false
+    ruleSetFiles = files("${rootGradleDir}/static-code-analysis/pmd/ruleset.xml")
+    ruleSets = []
+    rulePriority = 3
+}
+
+cpd {
+    language = 'java'
+    toolVersion = '6.0.0'
+    minimumTokenCount = 100 // approximately 5-10 lines
+}
+
+cpdCheck {
+    reports {
+        text.enabled = false
+        xml.enabled = true
+    }
+    ignoreAnnotations = true
+    source = sourceSets.main.allJava
+}
+
+
+tasks.withType(Checkstyle) {
+    reports {
+        xml.enabled false
+        html.enabled true
+    }
+}
+
+tasks.withType(FindBugs) {
+    reports {
+        xml.enabled false
+        html.enabled true
+    }
+}
+
+tasks.withType(Pmd) {
+    reports {
+        xml.enabled false
+        html.enabled true
+    }
+}
+//************************************************************************************************
+
 version = '0.0.1'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -15,6 +78,7 @@ repositories {
 dependencies {
     implementation 'com.google.guava:guava:29.0-jre'
     testImplementation 'junit:junit:4.13.1'
+    classpath 'de.aaschmid:gradle-cpd-plugin:1.1'
 }
 
 //systemProp.sonar.host.url=https://sonar.josdem.io/
