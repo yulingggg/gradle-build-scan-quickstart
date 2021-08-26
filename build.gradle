@@ -4,8 +4,6 @@ plugins {
     id "org.sonarqube" version "2.7"
 }
 
-
-
 version = '0.0.1'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -34,11 +32,11 @@ jacocoTestReport {
 check.dependsOn jacocoTestReport
 
 // HTML test report-code coverage and static code analysis
-/*
+
 apply plugin: 'checkstyle'
 apply plugin: 'findbugs'
 apply plugin: 'pmd'
-apply plugin: de.aaschmid.gradle.plugins.cpd.CpdPlugin
+//apply plugin: de.aaschmid.gradle.plugins.cpd.CpdPlugin
 
 checkstyle {
     toolVersion = '8.12'
@@ -94,5 +92,5 @@ tasks.withType(Pmd) {
         xml.enabled false
         html.enabled true
     }
-}*/
+}
 //************************************************************************************************
