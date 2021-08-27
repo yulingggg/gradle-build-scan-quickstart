@@ -16,6 +16,7 @@ addons:
     packages:
       - oracle-java8-installer
 
+
 script:
   - ./gradlew build
   - ./gradlew test
