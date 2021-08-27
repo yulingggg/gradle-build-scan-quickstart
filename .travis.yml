@@ -42,14 +42,7 @@ before_install:                        # Install node version from .nvmrc
   - chmod +x ./cc-test-reporter
   #- export DISPLAY=:99.0                # Display number for xvfb (for headless browser testing)
   #- sh -e /etc/init.d/xvfb start        # Start xvfb (for headless browser testing)
-
-
-# Run the test suites
-script:
-  - bundle exec rubocop -DESP           # Backend linting
-  - bundle exec rake                    # Backend specs
-  #- npm test -- --browsers Firefox      # Frontend specs
-  - npm test                            # Frontend linting & specs
+        
 
 # Pipe the coverage data to Code Climate
 after_script:
