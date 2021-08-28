@@ -16,7 +16,7 @@ addons:
   sonarcloud:
     organization: "yulingggg" # the key of the org you chose at step #3
     token:
-      secure: mry1aBNocyZX+Sufqu99mWBzasnddWhJTqOR3+dIwRhyObtoChyQgDOnABuVj2hpN1HZECPazmBeBHiCV90SZ2clnlIagQm9ajdOGTwpnhfyBQnAWXjzQiyhK0ZvRRTc9Z9y2q5+jAHIG2/q+67KHvLU7Tcl/b253AA7IuWyxMnTfCua/7G4zzTKt0CLEK7omskYa/ZldZkd/c6JJcwROB8iGold6QOudH5VXGOs+MfXFjrw3+ytT7QrRwUKRG9JYbMZzzq9vY9rx9RjSO+hwwTYxUJUyFST/9H63DqCEt47f49ydiWFfesykqf4uV4L37V1J8dRBGIv+8YBnwfejpSkuHY6guYoQg7deK/H9GVnVqkGcncVB4U2xlRRRG7EnCQYbfQflMT8RIfj/7i8r5559/+NTVnKoa1+rksXz2eiZAXc8QxRMfVMsNeoOz6b/epZccOhyT3aQXPtbBgdel5trL+8I6rTvJUV1B3MzKAOUX+w4M+PEtfHP0nGYEVL3GdyjyFgYfGMB5YuPqarGjyHh/pqICxDI3VcD4hgOClpHKgLfBQ7TYPKFQFFEieBbFAWIIlYq6DNIS4ghYmxoO/oiggGFBPzplntTdTcM75DKag8ft4ylrLJDOEq0rz4p/v6i7sWozmn1GvIfQ7SWlYTTPlpQVP45dqlfdf3EQQ= # encrypted value of your token
+      secure: "e5+W0LqM4KvHZdixYPZyW8ZHZ0/2xZTBQr22BmzKLOPZElDUgZ/pe6y5po4ZyEHnwTXB6FkMezrL2zq76I1n6PcL3Z3C8st1Dr2voAo6sA1TBQU/Jgl2CYfO+u1/OfNnkf9AD2tABOgYNJxnAKB4fZZcSEicbUaiFHySNhhpPNYBYIWdvO4iVsVkUkuYgxBmKbx1jwTSaPPAr+7d//4sNx/kjKBwpB1pUUAcXQYx260mz1n4SkdsEQTw6/d2w5XqSUVFooTGoMZVgv4StgEG9JP2+JcYZ99WlVwVcign78+x/O97jZvxZ1lEMxwOJHLiY1U0h15dmCDtctjPn1gyat1eH9PfX/hlhu2lc8dv3rIJnl9tYzex46BkcELFxEDTMYnZW/otat1/m/1wz5GozyWf1UnZRO9D4/tNxGQYwW0VCbW5slACpl4ni+ATJn+NtUeMHvvbjjm70evAOhlytt1QJsdHJiqgA9QU4f+2nLqMUlisSObHlVHkCA5IWIqgOdHkJ5Tm2bTrZZGG+v1uWPj7I2YdukGc8QRd7jotka29XsI6SYlkKXYn3w6IZmnTFGLD8VHvz6Fi/4ZDOFs4mqKRXeaHmxkz83MubVzofgOdINuyBvWPW2OOM1Wpv1tj5kBSbpaYatb+eUM+PRcrSeOxc/KLLTxDVs9H8W6Nolw=" # encrypted value of your token
   apt:
     packages:
       - oracle-java8-installer
@@ -24,43 +24,5 @@ addons:
 
 script:
   - ./gradlew build
-  - ./gradlew test sonarqube -Dsonar.host.url=https://sonar.josdem.io
+  - ./gradlew test sonarqube 
 
-################ CODE CLIMATE #########################3
-# Cache gems
-cache:
-  bundler: true
-  directories:
-    - node_modules
-
-addons:
-  chrome: stable
-  #firefox: latest
-  sonarcloud:
-    organization: "yulingggg"
-    token:
-      secure: "**************************" # encrypted value of your token
-
-script:
-  - ./gradlew sonarqube
-
-env:
-  global:
-    CC_TEST_REPORTER_ID=ABC123
-
-before_install:                        # Install node version from .nvmrc
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  #- export DISPLAY=:99.0                # Display number for xvfb (for headless browser testing)
-  #- sh -e /etc/init.d/xvfb start        # Start xvfb (for headless browser testing)
-        
-
-# Pipe the coverage data to Code Climate
-after_script:
-  - ./cc-test-reporter format-coverage -t simplecov -o coverage/codeclimate.backend.json coverage/backend/.resultset.json # Format backend coverage
-  - ./cc-test-reporter format-coverage -t lcov -o coverage/codeclimate.frontend.json coverage/frontend/lcov.info  # Format frontend coverage
-  - ./cc-test-reporter sum-coverage coverage/codeclimate.*.json -p 2                  # Sum both coverage parts into coverage/codeclimate.json
-  - if [[ "$TRAVIS_TEST_RESULT" == 0 ]]; then ./cc-test-reporter upload-coverage; fi  # Upload coverage/codeclimate.json
-
-
-##################################3######################################
