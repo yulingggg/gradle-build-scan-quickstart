@@ -2,6 +2,7 @@ language: java
 install: skip
 
 dist: trusty
+dist: xenial # sonarcloud
 
 jdk:
   - oraclejdk8
@@ -12,6 +13,10 @@ after_success:
 sudo: false
 
 addons:
+  sonarcloud:
+    organization: "yulingggg" # the key of the org you chose at step #3
+    token:
+      secure: "d73aebb1a8c090c56f4b0743777c3a343046b8b2" # encrypted value of your token
   apt:
     packages:
       - oracle-java8-installer
