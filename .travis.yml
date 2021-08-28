@@ -24,8 +24,7 @@ addons:
 
 script:
   - ./gradlew build
-  - ./gradlew test
-  - sonar-scanner
+  - ./gradlew test sonarqube -Dsonar.host.url=https://sonar.josdem.io
 
 ################ CODE CLIMATE #########################3
 # Cache gems
