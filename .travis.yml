@@ -22,5 +22,5 @@ script:
   - ./gradlew build
   - ./gradlew test
   - gradle jacocoTestReport
-  - gradle sonarqube -Dsonar.login=$SONAR_TOKEN -Dsonar.projectKey=$SONAR_PROJECT_KEY
+  #- gradle sonarqube -Dsonar.login=$SONAR_TOKEN -Dsonar.projectKey=$SONAR_PROJECT_KEY
 
