@@ -16,7 +16,7 @@ addons:
   sonarcloud:
     organization: "yulingggg" # the key of the org you chose at step #3
     token:
-      secure: "d73aebb1a8c090c56f4b0743777c3a343046b8b2" # encrypted value of your token
+      secure: "e5+W0LqM4KvHZdixYPZyW8ZHZ0/2xZTBQr22BmzKLOPZElDUgZ/pe6y5po4ZyEHnwTXB6FkMezrL2zq76I1n6PcL3Z3C8st1Dr2voAo6sA1TBQU/Jgl2CYfO+u1/OfNnkf9AD2tABOgYNJxnAKB4fZZcSEicbUaiFHySNhhpPNYBYIWdvO4iVsVkUkuYgxBmKbx1jwTSaPPAr+7d//4sNx/kjKBwpB1pUUAcXQYx260mz1n4SkdsEQTw6/d2w5XqSUVFooTGoMZVgv4StgEG9JP2+JcYZ99WlVwVcign78+x/O97jZvxZ1lEMxwOJHLiY1U0h15dmCDtctjPn1gyat1eH9PfX/hlhu2lc8dv3rIJnl9tYzex46BkcELFxEDTMYnZW/otat1/m/1wz5GozyWf1UnZRO9D4/tNxGQYwW0VCbW5slACpl4ni+ATJn+NtUeMHvvbjjm70evAOhlytt1QJsdHJiqgA9QU4f+2nLqMUlisSObHlVHkCA5IWIqgOdHkJ5Tm2bTrZZGG+v1uWPj7I2YdukGc8QRd7jotka29XsI6SYlkKXYn3w6IZmnTFGLD8VHvz6Fi/4ZDOFs4mqKRXeaHmxkz83MubVzofgOdINuyBvWPW2OOM1Wpv1tj5kBSbpaYatb+eUM+PRcrSeOxc/KLLTxDVs9H8W6Nolw=" # encrypted value of your token
   
 
 
