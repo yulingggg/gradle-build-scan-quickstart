@@ -16,7 +16,7 @@ addons:
   sonarcloud:
     organization: "yulingggg" # the key of the org you chose at step #3
     token:
-      secure: d73aebb1a8c090c56f4b0743777c3a343046b8b2 # encrypted value of your token
+      secure: mry1aBNocyZX+Sufqu99mWBzasnddWhJTqOR3+dIwRhyObtoChyQgDOnABuVj2hpN1HZECPazmBeBHiCV90SZ2clnlIagQm9ajdOGTwpnhfyBQnAWXjzQiyhK0ZvRRTc9Z9y2q5+jAHIG2/q+67KHvLU7Tcl/b253AA7IuWyxMnTfCua/7G4zzTKt0CLEK7omskYa/ZldZkd/c6JJcwROB8iGold6QOudH5VXGOs+MfXFjrw3+ytT7QrRwUKRG9JYbMZzzq9vY9rx9RjSO+hwwTYxUJUyFST/9H63DqCEt47f49ydiWFfesykqf4uV4L37V1J8dRBGIv+8YBnwfejpSkuHY6guYoQg7deK/H9GVnVqkGcncVB4U2xlRRRG7EnCQYbfQflMT8RIfj/7i8r5559/+NTVnKoa1+rksXz2eiZAXc8QxRMfVMsNeoOz6b/epZccOhyT3aQXPtbBgdel5trL+8I6rTvJUV1B3MzKAOUX+w4M+PEtfHP0nGYEVL3GdyjyFgYfGMB5YuPqarGjyHh/pqICxDI3VcD4hgOClpHKgLfBQ7TYPKFQFFEieBbFAWIIlYq6DNIS4ghYmxoO/oiggGFBPzplntTdTcM75DKag8ft4ylrLJDOEq0rz4p/v6i7sWozmn1GvIfQ7SWlYTTPlpQVP45dqlfdf3EQQ= # encrypted value of your token
   apt:
     packages:
       - oracle-java8-installer
