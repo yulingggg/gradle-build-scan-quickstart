@@ -1,5 +1,6 @@
 language: java
-install: skip
+install: 
+  sudo apt-get install oracle-java8-installer
 
 dist: trusty
 dist: xenial # sonarcloud
