@@ -35,6 +35,7 @@ check.dependsOn jacocoTestReport
 sonarqube {
   properties {
     property "sonar.projectKey", "yulingggg_gradle-build-scan-quickstart"
+    property "sonar.login", "yulingggg_gradle-build-scan-quickstart"
   }
 }
 
