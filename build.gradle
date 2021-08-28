@@ -32,6 +32,12 @@ jacocoTestReport {
 
 check.dependsOn jacocoTestReport
 
+sonarqube {
+  properties {
+    property "sonar.projectKey", "yulingggg_gradle-build-scan-quickstart"
+  }
+}
+
 // HTML test report-code coverage and static code analysis
 /*
 apply plugin: 'checkstyle'
