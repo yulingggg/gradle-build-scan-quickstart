@@ -16,10 +16,11 @@ addons:
   sonarcloud:
     organization: "yulingggg" # the key of the org you chose at step #3
     token:
-      secure: "TEBROFurO6P4mF6SRF0uIUhqimSg0BGema0jIRe3YGMODbxQIv2SsbA+54v4oTdNRAfsO/3bcf4c28MEuJ5AeBZJTdWguzMJk7lJSePtfpwdyjCPEMjye+3GDf4DSw+2zqpP4QUWfGt6Kbg8GliTFQKyijjOEiEB96CDcAmOs36pM8vMO/62jLnDdW+255SGLfrIXIfo9HL/6Pqoro8K5scPF0YqRKE5kEqXeGoIlS1m9fUs6UROf33NjsElB7XN1dkemoZSJtPygHzbOxBn2Lpmr9h+Oamj5pQkhTP3vcg60sIXk68P/PPNj1gT/4B326ZyYT6nbbBGtbcPQnAG8UT9QsbwRZzTz82V6UnIAHbe2Y5fbk7mJUKtbaABhHx3PjhynMlFbdo2/yrvZJ8AuhVNTiwjukJB+Xk8yuqiWe5V7Xou2NMSuBl2ZkURdli5lRnbsRXySIGeHk25wMyNuSjR+W4FCTYLR8yLUBBZRQPc3vFlb7yIi6rx/lN5SaXSZvdbnhL8GphkFfZiuOvZQFzFvxVxP+Fam6/V2doteoO5t6nIJ1yIMz3nC9DiFJk0cfifnhglkWHJ9ScG/FSHOBTZ2NYfbMjfjBCO7tATWScg0Zdcf0YMCntTzOFy10K032rA1hI8BJ1ST1uKSdfJV8MAvsKYnb6aQ01dEpfgp44="
+      secure: $SONAR_TOKEN
 
 script:
   - ./gradlew build
   - ./gradlew test
-  - ./gradlew sonarqube
+  - gradle jacocoTestReport
+  - gradle sonarqube -Dsonar.login=$SONAR_TOKEN -Dsonar.projectKey=$SONAR_PROJECT_KEY
 
