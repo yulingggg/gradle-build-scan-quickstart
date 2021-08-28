@@ -16,11 +16,10 @@ addons:
   sonarcloud:
     organization: "yulingggg" # the key of the org you chose at step #3
     token:
-      secure: "e5+W0LqM4KvHZdixYPZyW8ZHZ0/2xZTBQr22BmzKLOPZElDUgZ/pe6y5po4ZyEHnwTXB6FkMezrL2zq76I1n6PcL3Z3C8st1Dr2voAo6sA1TBQU/Jgl2CYfO+u1/OfNnkf9AD2tABOgYNJxnAKB4fZZcSEicbUaiFHySNhhpPNYBYIWdvO4iVsVkUkuYgxBmKbx1jwTSaPPAr+7d//4sNx/kjKBwpB1pUUAcXQYx260mz1n4SkdsEQTw6/d2w5XqSUVFooTGoMZVgv4StgEG9JP2+JcYZ99WlVwVcign78+x/O97jZvxZ1lEMxwOJHLiY1U0h15dmCDtctjPn1gyat1eH9PfX/hlhu2lc8dv3rIJnl9tYzex46BkcELFxEDTMYnZW/otat1/m/1wz5GozyWf1UnZRO9D4/tNxGQYwW0VCbW5slACpl4ni+ATJn+NtUeMHvvbjjm70evAOhlytt1QJsdHJiqgA9QU4f+2nLqMUlisSObHlVHkCA5IWIqgOdHkJ5Tm2bTrZZGG+v1uWPj7I2YdukGc8QRd7jotka29XsI6SYlkKXYn3w6IZmnTFGLD8VHvz6Fi/4ZDOFs4mqKRXeaHmxkz83MubVzofgOdINuyBvWPW2OOM1Wpv1tj5kBSbpaYatb+eUM+PRcrSeOxc/KLLTxDVs9H8W6Nolw=" # encrypted value of your token
-  
-
+      secure: "TEBROFurO6P4mF6SRF0uIUhqimSg0BGema0jIRe3YGMODbxQIv2SsbA+54v4oTdNRAfsO/3bcf4c28MEuJ5AeBZJTdWguzMJk7lJSePtfpwdyjCPEMjye+3GDf4DSw+2zqpP4QUWfGt6Kbg8GliTFQKyijjOEiEB96CDcAmOs36pM8vMO/62jLnDdW+255SGLfrIXIfo9HL/6Pqoro8K5scPF0YqRKE5kEqXeGoIlS1m9fUs6UROf33NjsElB7XN1dkemoZSJtPygHzbOxBn2Lpmr9h+Oamj5pQkhTP3vcg60sIXk68P/PPNj1gT/4B326ZyYT6nbbBGtbcPQnAG8UT9QsbwRZzTz82V6UnIAHbe2Y5fbk7mJUKtbaABhHx3PjhynMlFbdo2/yrvZJ8AuhVNTiwjukJB+Xk8yuqiWe5V7Xou2NMSuBl2ZkURdli5lRnbsRXySIGeHk25wMyNuSjR+W4FCTYLR8yLUBBZRQPc3vFlb7yIi6rx/lN5SaXSZvdbnhL8GphkFfZiuOvZQFzFvxVxP+Fam6/V2doteoO5t6nIJ1yIMz3nC9DiFJk0cfifnhglkWHJ9ScG/FSHOBTZ2NYfbMjfjBCO7tATWScg0Zdcf0YMCntTzOFy10K032rA1hI8BJ1ST1uKSdfJV8MAvsKYnb6aQ01dEpfgp44="
 
 script:
   - ./gradlew build
   - ./gradlew test
-  - ./gradlew test sonarqube
+  - ./gradlew sonarqube
+
